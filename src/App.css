@@ -1,38 +1,108 @@
+#root {
+  height: 100vh;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: inherit;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* background-color: #151519; */
+}
+.btn__open__modal {
+  width: 240px;
+  height: 80px;
+  margin: auto;
+  background: none;
+  color: #ccc;
+  font-size: 18px;
+  border: 1px solid #338033;
+  border-radius: 4px;
+  transition: 0.6s;
+  overflow: hidden;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+/* .btn__open__modal:focus {
+  outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+.btn__open__modal:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  width: 60px;
+  height: 100%;
+  left: 100%;
+  top: 0;
+  opacity: 0.5s;
+  filter: blur(30px);
+  transform: translateX(-130px) skewX(-15deg);
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn__open__modal:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  width: 30px;
+  height: 100%;
+  left: 30%;
+  top: 0;
+  opacity: 0;
+  filter: blur(30px);
+  transform: translate(-100px) scaleX(-15deg);
+}
+
+.btn__open__modal:hover {
+  background: #338033;
+  cursor: pointer;
+}
+
+.btn__open__modal:hover:before {
+  transform: translateX(300px) skewX(-15deg);
+  opacity: 0.6;
+  transition: 0.7s;
+}
+
+.btn__open__modal:hover:after {
+  transform: translateX(300px) skewX(-15deg);
+  opacity: 1;
+  transition: 0.7s;
+} */
+
+.container {
+  border: 1px solid #338033;
+  width: 70%;
+  height: 23%;
+  margin: auto;
+  border-radius: 5px;
+  padding: 10px;
+}
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+}
+.close__modal {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: 25px;
+  background: none;
+}
+.modal__footer {
+  display: flex;
+  justify-content: flex-end;
+}
+.modal__ok,
+.modal__cancel {
+  margin-left: 20px;
+  font-size: 15px;
+  width: 70px;
+  height: 30px;
+  border: 1px solid #338033;
+  border-radius: 3px;
+  background: none;
+  cursor: pointer;
 }
