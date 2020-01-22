@@ -1,26 +1,23 @@
-import React, {Component} from "react";
+import React, {useEffect} from "react";
 import ReactDOM from 'react-dom';
 
-const modalRoot = document.getElementById('modal__root');
-class Modal extends Component {
+ const modalRoot = document.getElementById('modal__root');
+ const element = document.createElement("div");
+const  Modal = ({toggleModal}) => {
   
-  element = document.createElement("div");
+  useEffect(() => {
+    modalRoot.appendChild(element);
+    element.addEventListener('click', toggleModal)
+    return () => {
+      modalRoot.removeChild(element)
+    }
+  })
 
-  componentDidMount() {
-  modalRoot.appendChild(this.element);
-  }
-
-  componentWillUnmount() {
-    modalRoot.removeChild(this.element);
-  }
-
-
- render(){
    return ReactDOM.createPortal(
   <div className="container">
     <div className="modal__header">
       <h3>Modal Title</h3>
-      <button className="close__modal" onClick={this.props.toggleModal}>
+      <button className="close__modal" onClick={toggleModal}>
         &times;
       </button>
     </div>
@@ -39,14 +36,14 @@ class Modal extends Component {
     </div>
     <div className="modal__footer">
       <button className="modal__ok">OK</button>
-      <button className="modal__cancel" onClick={this.props.toggleModal}>
+      <button className="modal__cancel" onClick={toggleModal}>
         Cancel
       </button>
     </div>
   </div>,
-  this.element
+  element
 );
-}
+
 }
 export default Modal;
 
