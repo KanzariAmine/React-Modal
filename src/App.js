@@ -10,12 +10,11 @@ function App() {
   };
   return (
     <div className="App">
-      {!showModal ? (
+     
         <button className="btn__open__modal" onClick={toggleModal}>
           open modal
         </button>
-      ) : null}
-      {showModal ? <Modal toggleModal={toggleModal} /> : null}
+      {showModal ? <Modal toggleModal={toggleModal}/> : null}
     </div>
   );
 }
