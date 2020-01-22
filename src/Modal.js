@@ -1,5 +1,59 @@
 import React, {useEffect} from "react";
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
+
+
+const Container = styled.div`
+  border: 1px solid #338033;
+  width: 70%;
+  height: 35%;
+  margin: auto;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+`;
+
+const ModalHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+ const ModalFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+ `;
+
+const CloseModalButton  = styled.button`
+   cursor: pointer;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: 25px;
+  background: none;
+`;
+
+const ModalOkButton  = styled.button`
+  margin-left: 20px;
+  font-size: 15px;
+  width: 70px;
+  height: 30px;
+  border: 1px solid #338033;
+  border-radius: 3px;
+  background: none;
+  cursor: pointer;
+`
+
+const ModalCancelButton = styled.button`
+ margin-left: 20px;
+ font-size: 15px;
+ width: 70px;
+ height: 30px;
+ border: 1px solid #338033;
+ border-radius: 3px;
+ background: none;
+ cursor: pointer;
+`
+
 
  const modalRoot = document.getElementById('modal__root');
  const element = document.createElement("div");
@@ -14,13 +68,16 @@ const  Modal = ({toggleModal}) => {
   })
 
    return ReactDOM.createPortal(
-  <div className="container">
-    <div className="modal__header">
-      <h3>Modal Title</h3>
-      <button className="close__modal" onClick={toggleModal}>
-        &times;
-      </button>
-    </div>
+
+  
+  <Container>
+      <ModalHeader>
+        <h3>Modal Title</h3>
+        <CloseModalButton onClick={toggleModal}>
+          &times;
+        </CloseModalButton>
+      </ModalHeader>
+   
     <div className="modal__body">
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -34,13 +91,13 @@ const  Modal = ({toggleModal}) => {
         including versions of Lorem Ipsum.
       </p>
     </div>
-    <div className="modal__footer">
-      <button className="modal__ok">OK</button>
-      <button className="modal__cancel" onClick={toggleModal}>
+    <ModalFooter>
+      <ModalOkButton>OK</ModalOkButton>
+      <ModalCancelButton onClick={toggleModal}>
         Cancel
-      </button>
-    </div>
-  </div>,
+      </ModalCancelButton>
+    </ModalFooter>
+  </Container>,
   element
 );
 
