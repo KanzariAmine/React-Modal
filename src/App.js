@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { BtnOpenModal } from "./components/Modal.styled";
-import Modal from "./Modal";
+import { BtnOpenModal, GlobalStyle } from "./components/Modal.styled";
+import Modal from "./components/Modal";
 import "./App.css";
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
   };
   return (
     <div className="App">
+      <GlobalStyle />
       <BtnOpenModal onClick={toggleModal}>open modal</BtnOpenModal>
       {showModal ? <Modal toggleModal={toggleModal} /> : null}
     </div>

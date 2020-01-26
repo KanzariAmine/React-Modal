@@ -1,4 +1,4 @@
-#root {
+/* #root {
   height: 100vh;
 }
 .App {
@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   background-color: #38389b;
-}
+} */
 /* .btn__open__modal {
   width: 240px;
   height: 80px;
@@ -19,14 +19,14 @@
   text-transform: uppercase;
   cursor: pointer;
 } */
-#modal__root > div{
+#modal__root > div {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 0;
-  background: rgba(0,0,0,0.3);  
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
 }
@@ -66,3 +66,9 @@
   background: none;
   cursor: pointer;
 } */
+
+.modal__body {
+  height: 60%;
+  justify-content: space-between;
+  overflow: auto;
+}
