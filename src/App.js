@@ -1,19 +1,12 @@
-import React, { useState } from "react";
-import { BtnOpenModal, GlobalStyle } from "./components/Modal.styled";
-import Modal from "./components/Modal";
+import React from "react";
+import { GlobalStyle } from "./components/Modal.styled";
+import Button from "./components/Button";
 import "./App.css";
-
 function App() {
-  const [showModal, setShowModal] = useState(false);
-
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
   return (
     <div className="App">
       <GlobalStyle />
-      <BtnOpenModal onClick={toggleModal}>open modal</BtnOpenModal>
-      {showModal ? <Modal toggleModal={toggleModal} /> : null}
+      <Button />
     </div>
   );
 }
