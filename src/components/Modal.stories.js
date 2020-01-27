@@ -6,4 +6,4 @@ export default {
   title: "Button",
   component: Button
 };
-storiesOf("BasicModal", module).add("Modal", () => <Button type="pop"/>);
+storiesOf("BasicModal", module).add("Modal", () => <Button />);
