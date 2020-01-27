@@ -23,7 +23,7 @@ function Button() {
     <>
       <BtnOpenModal onClick={toggleModal}>open modal</BtnOpenModal>
       <Modal 
-        showModal={showModal}
+       showModal={showModal}
         onToggleModal={toggleModal}
         title={"Modal Title"}
         content={content}

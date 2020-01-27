@@ -1,40 +1,26 @@
 import React from "react";
-
 import PropTypes from 'prop-types';
 import {
   Container,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  CloseModalButton,
-  ModalOkButton,
-  ModalCancelButton,
   ModalContainer
 } from "./Modal.styled";
+import ModalHeader from './ModalHeader';
+import ModalBody from './ModalBody';
+import Footer from './ModalFooter';
 
 
-const Modal = ({ showModal, title, content,onToggleModal }) => {
- 
+
+
+const Modal = ({ showModal, title, content, onToggleModal }) => {
 
   return (
-    <ModalContainer active={showModal}>
-    <Container >
-      <ModalHeader>
-        <h3>{title}</h3>
-        <CloseModalButton onClick={onToggleModal}>&times;</CloseModalButton>
-      </ModalHeader>
-      <ModalBody>
-        <p>
-          {content}
-        </p>
-      </ModalBody>
-      <ModalFooter>      
-          <ModalOkButton  onClick={onToggleModal}>OK</ModalOkButton>
-          <ModalCancelButton onClick={onToggleModal}>Cancel</ModalCancelButton>
-      </ModalFooter>
+    <ModalContainer active={showModal} onClick={onToggleModal}>
+    <Container onClick={e => e.stopPropagation()}>
+      <ModalHeader title={title} onToggleModal={onToggleModal}/>
+      <ModalBody content={content}/>
+      <Footer onToggleModal={onToggleModal}/>
     </Container>
-    </ModalContainer>
-   
+    </ModalContainer>  
   );
 };
 

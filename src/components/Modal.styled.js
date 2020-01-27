@@ -14,25 +14,25 @@ export const GlobalStyle = createGlobalStyle`
 export const Container = styled.div`
   border: 1px solid #338033;
   width: 70%;
-  height: 35%;
+  height: 40%;
   margin: auto;
   border-radius: 5px;
   padding: 10px;
   background-color: #fff;
 `;
 
-export const ModalHeader = styled.div`
+export const Header = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-export const ModalBody = styled.div`
+export const Body = styled.div`
   height: 60%;
   justify-content: space-between;
   overflow: auto;
 `;
 
-export const ModalFooter = styled.div`
+export const Footer = styled.div`
   display: flex;
   justify-content: flex-end;
   padding: 15px 30px;
@@ -94,16 +94,4 @@ export const BtnOpenModal = styled.button`
   text-transform: uppercase;
   cursor: pointer;
   background: white;
-`;
-
-export const wrapperModal = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 0;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
 `;
