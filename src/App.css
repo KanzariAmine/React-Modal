@@ -19,7 +19,7 @@
   text-transform: uppercase;
   cursor: pointer;
 } */
-#modal__root > div {
+/* #modal__root {
   position: fixed;
   top: 0;
   right: 0;
@@ -29,7 +29,7 @@
   background: rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-}
+} */
 /* .container {
   border: 1px solid #338033;
   width: 70%;

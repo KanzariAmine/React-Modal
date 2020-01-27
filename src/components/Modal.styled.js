@@ -46,7 +46,20 @@ export const CloseModalButton = styled.button`
   font-size: 25px;
   background: none;
 `;
-
+export const ModalContainer = styled.div`
+    display:${({ active }) => (active ? "flex" : "none !important")};
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height:100vh;
+    width:100vw;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+`;
 export const ModalOkButton = styled.button`
   margin-left: 20px;
   font-size: 15px;
@@ -81,4 +94,16 @@ export const BtnOpenModal = styled.button`
   text-transform: uppercase;
   cursor: pointer;
   background: white;
+`;
+
+export const wrapperModal = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
 `;
